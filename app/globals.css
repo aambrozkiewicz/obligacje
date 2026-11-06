@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #2d5cc1;
+  --color-ink: #172135;
+  --color-muted: #566174;
+  --color-line: #dce2eb;
+}
+
+body { @apply bg-white text-ink antialiased; }
+
+.canvas {
+  background-image: linear-gradient(#17213508 1px, transparent 1px),
+    linear-gradient(90deg, #17213508 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.action {
+  @apply cursor-pointer rounded-xl bg-brand px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-900/15 hover:bg-blue-800 disabled:cursor-wait disabled:opacity-70;
+}
+
+.panel { @apply rounded-2xl border border-line bg-white shadow-sm; }
+form label { @apply grid content-start gap-1.5 text-sm font-medium; }
+form input:not([type=hidden]), form select {
+  @apply min-w-0 w-full rounded-lg border border-line bg-white px-3 py-2;
+}
+
+.timeline { appearance: none; background: transparent; }
+.timeline::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+  background: var(--color-brand);
+  border: 2px solid white;
+  box-shadow: 0 0 0 1px var(--color-brand);
+}
+.timeline::-moz-range-thumb {
+  width: 13px;
+  height: 13px;
+  border-radius: 100%;
+  background: var(--color-brand);
+  border: 2px solid white;
+  box-shadow: 0 0 0 1px var(--color-brand);
+}
